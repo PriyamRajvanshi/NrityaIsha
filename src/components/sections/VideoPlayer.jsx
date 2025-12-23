@@ -119,12 +119,29 @@ const VideoPlayer = () => {
               onTimeUpdate={handleTimeUpdate}
               onLoadedMetadata={handleLoadedMetadata}
               onError={(e) => {
+                console.error('Video error:', {
+                  error: e.target.error,
+                  code: e.target.error?.code,
+                  message: e.target.error?.message,
+                  src: videoSrc,
+                  networkState: e.target.networkState,
+                  readyState: e.target.readyState
+                })
                 // Fallback if video doesn't exist or format not supported
                 e.target.style.display = 'none'
                 const errorDiv = e.target.nextSibling
                 if (errorDiv) {
                   errorDiv.style.display = 'flex'
                 }
+              }}
+              onLoadStart={() => {
+                console.log('Video load started:', videoSrc)
+              }}
+              onCanPlay={() => {
+                console.log('Video can play:', videoSrc)
+              }}
+              onLoadedData={() => {
+                console.log('Video data loaded:', videoSrc)
               }}
             />
             <div className="hidden absolute inset-0 bg-gray-800 items-center justify-center">
