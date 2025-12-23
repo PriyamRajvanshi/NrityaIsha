@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
+import { VIDEO_URL } from '../config/video'
 
 const Performances = () => {
   const topVideoRef = useRef(null)
@@ -22,8 +23,9 @@ const Performances = () => {
     isSeeking: false
   })
 
-  const topVideoSrc = '/videos/NI.mov'
-  const bottomVideoSrc = '/videos/NI.mov'
+  // Video URL from config (supports Vercel Blob or local path)
+  const topVideoSrc = VIDEO_URL
+  const bottomVideoSrc = VIDEO_URL
 
   // Top Video Controls
   const toggleTopPlay = () => {

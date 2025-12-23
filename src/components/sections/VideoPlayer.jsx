@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { VIDEO_URL } from '../../config/video'
 
 const VideoPlayer = () => {
   const videoRef = useRef(null)
@@ -9,12 +10,9 @@ const VideoPlayer = () => {
   const [duration, setDuration] = useState(0)
   const [isSeeking, setIsSeeking] = useState(false)
 
-  // Add your video file path here (video should be placed in public/videos/ folder)
-  // Supported formats: MP4, MOV, WebM, OGG
-  // Example: If you have video.mov in public/videos/
-  // Then use: '/videos/video.mov'
-  // Note: .mov files work best in Safari and modern browsers. For best compatibility, use MP4 format.
-  const videoSrc = '/videos/NI.mov'
+  // Video URL from config (supports Vercel Blob or local path)
+  // To use Vercel Blob: Set VITE_VIDEO_URL in .env or update src/config/video.js
+  const videoSrc = VIDEO_URL
 
   const togglePlay = () => {
     if (videoRef.current) {

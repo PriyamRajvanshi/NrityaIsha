@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { VIDEO_URL } from '../config/video'
 
 const GoGlobal = () => {
   const videoRef = useRef(null)
@@ -10,7 +11,8 @@ const GoGlobal = () => {
   const [duration, setDuration] = useState(0)
   const [isSeeking, setIsSeeking] = useState(false)
 
-  const videoSrc = '/videos/NI.mov'
+  // Video URL from config (supports Vercel Blob or local path)
+  const videoSrc = VIDEO_URL
 
   const togglePlay = () => {
     if (videoRef.current) {
