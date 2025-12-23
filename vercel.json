@@ -3,7 +3,8 @@
   "git": {
     "deploymentEnabled": {
       "main": true
-    }
+    },
+    "lfs": true
   },
   "rewrites": [
     {
