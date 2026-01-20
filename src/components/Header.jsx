@@ -50,7 +50,17 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button onClick={() => scrollToSection('home')} className="flex items-center space-x-2">
-            <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
+            <img
+              src="https://tnsbfmudt4jtfb5d.public.blob.vercel-storage.com/Logo.jpeg"
+              alt="NitryaIsha Logo"
+              className="w-12 h-12 rounded-full object-cover"
+              onError={(e) => {
+                // Fallback to text logo if image fails
+                e.target.style.display = 'none';
+                e.target.nextSibling.style.display = 'flex';
+              }}
+            />
+            <div className="hidden w-12 h-12 bg-primary-600 rounded-full items-center justify-center">
               <span className="text-white font-serif text-xl font-bold">D</span>
             </div>
             <span className="text-xl font-serif font-semibold">NitryaIsha</span>
