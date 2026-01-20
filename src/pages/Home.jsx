@@ -20,6 +20,13 @@ const Home = () => {
   // Video URL from config (supports Vercel Blob or local path)
   const videoSrc = VIDEO_URL
 
+  // Video optimization: Use WebM format if available (better compression)
+  const getOptimizedVideoSrc = () => {
+    // You can add logic here to serve different formats based on browser support
+    // For now, using the existing MP4 source with optimizations
+    return videoSrc
+  }
+
   const togglePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -109,15 +116,29 @@ const Home = () => {
         <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px]">
           <video
             ref={videoRef}
-            src={videoSrc}
+            src={getOptimizedVideoSrc()}
             className="w-full h-full object-cover"
             controls={false}
             playsInline
-            preload="metadata"
+            autoPlay
+            muted
+            loop
+            preload="auto"
+            poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Ctext x='50' y='50' text-anchor='middle' dy='.3em' fill='%23fff' font-size='12'%3ELoading...%3C/text%3E%3C/svg%3E"
             onPlay={handlePlay}
             onPause={handlePause}
             onTimeUpdate={handleTimeUpdate}
             onLoadedMetadata={handleLoadedMetadata}
+            onWaiting={() => {
+              // Show loading indicator when buffering
+              const loadingIndicator = document.getElementById('video-loading');
+              if (loadingIndicator) loadingIndicator.style.display = 'flex';
+            }}
+            onCanPlay={() => {
+              // Hide loading indicator when video can play
+              const loadingIndicator = document.getElementById('video-loading');
+              if (loadingIndicator) loadingIndicator.style.display = 'none';
+            }}
             onError={(e) => {
               e.target.style.display = 'none'
               const errorDiv = e.target.nextSibling
@@ -126,6 +147,14 @@ const Home = () => {
               }
             }}
           />
+
+          {/* Loading indicator */}
+          <div id="video-loading" className="hidden absolute inset-0 bg-black/50 items-center justify-center">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+              <p className="text-white text-sm">Loading video...</p>
+            </div>
+          </div>
           <div className="hidden absolute inset-0 bg-gray-800 items-center justify-center">
             <div className="text-center p-4">
               <p className="text-white text-lg mb-2">Video not found or format not supported</p>
