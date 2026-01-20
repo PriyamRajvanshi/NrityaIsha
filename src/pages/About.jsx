@@ -24,11 +24,11 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Image */}
             <div>
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl">
+              <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-xl">
                 <img
-                  src="/images/global1.jpg"
-                  alt="Classes are Inclusive, Catered towards your needs"
-                  className="w-full h-full object-cover"
+                  src="https://tnsbfmudt4jtfb5d.public.blob.vercel-storage.com/about_1.jpeg"
+                  alt="Iptisha - NrityaIsha Founder"
+                  className="w-full h-full object-contain"
                   onError={(e) => {
                     e.target.style.display = 'none'
                     const placeholder = e.target.nextSibling
@@ -61,17 +61,11 @@ const About = () => {
             {/* Text Content */}
             <div>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">
-                Classes are Inclusive, Catered towards your needs
+                Iptisha
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Our goal is for you to learn classical dance regardless of your age or gender. Our Programs are structured to help you grow individually. The virtual classes are flexible by way of enabling you to book your preferred slots from our scheduling calendar.
+                Iptisha is shaped by fourteen years of uninterrupted sadhana since childhood in Indian classical dance. She mentored at Nritya Kaustubha, the school of Dr. Yamini Krishnamurti, and is rooted in the revered Thanjavur Quartet lineage. Through NrityaIsha, she has spent four years travelling across India, leading workshops that foster dialogue between classical and folk traditions. Teaching across schools, institutions, and community spaces, including work with underprivileged groups, her practice is dedicated to expanding access and reshaping how classical dance is perceived, understood, and lived.
               </p>
-              <button
-                onClick={() => document.getElementById('trainings').scrollIntoView({ behavior: 'smooth' })}
-                className="btn-primary inline-block"
-              >
-                Know More
-              </button>
             </div>
           </div>
         </div>
@@ -83,26 +77,20 @@ const About = () => {
             {/* Text Content */}
             <div className="md:col-start-1 md:row-start-1">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">
-                Lessons focused on building movement and self-awareness
+                Dr. Yamini Krishnamurti
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                We want your learning experience to be more than just plain instructive monologues. We help learners build movement confidence and establish the traditional significance of the form. Our approach combines body conditioning exercises, free body movements in vocabulary of classical dance, and training in choreographic nuances and performance.
+                Dr. Yamini Krishnamurti is a legendary exponent of Bharatanatyam, Kuchipudi, and Odissi, widely credited with reviving Kuchipudi and redefining Bharatanatyam for modern stages. A trendsetter in rhythm, repertoire, and presentation, she brought Indian classical dance to national and international prominence. Honoured with the Padma Vibhushan and Sangeet Natak Akademi Fellowship, her work bridges temple tradition and contemporary performance.
               </p>
-              <button
-                onClick={() => document.getElementById('trainings').scrollIntoView({ behavior: 'smooth' })}
-                className="btn-primary inline-block"
-              >
-                Know More
-              </button>
             </div>
 
             {/* Image */}
             <div className="md:col-start-2">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl">
+              <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-xl">
                 <img
-                  src="/images/global2.jpg"
-                  alt="Lessons focused on building movement and self-awareness"
-                  className="w-full h-full object-cover"
+                  src="https://tnsbfmudt4jtfb5d.public.blob.vercel-storage.com/about_2.jpeg"
+                  alt="Dr. Yamini Krishnamurti - Legendary Bharatanatyam Exponent"
+                  className="w-full h-full object-contain"
                   onError={(e) => {
                     e.target.style.display = 'none'
                     const placeholder = e.target.nextSibling
@@ -126,7 +114,7 @@ const About = () => {
                         d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
-                    <p className="text-white text-sm">Add image: /images/global2.jpg</p>
+                    <p className="text-white text-sm">Add image: about_2.jpeg</p>
                   </div>
                 </div>
               </div>

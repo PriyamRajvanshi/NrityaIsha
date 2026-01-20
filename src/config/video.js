@@ -5,7 +5,7 @@
 
 // For now, using local path as fallback
 // Replace with your Vercel Blob URL after upload
-export const VIDEO_URL = 'https://tnsbfmudt4jtfb5d.public.blob.vercel-storage.com/NI.mov'
+export const VIDEO_URL = 'https://tnsbfmudt4jtfb5d.public.blob.vercel-storage.com/NitryaIsha_BR.mp4'
 
 // Example Blob URL format: 
 // https://[your-blob-url].public.blob.vercel-storage.com/NI.mov

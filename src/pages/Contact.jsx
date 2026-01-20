@@ -31,8 +31,7 @@ const Contact = () => {
                   </div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-lg mb-1">Email</h3>
-                    <p className="text-gray-600">info@danceschool.com</p>
-                    <p className="text-gray-600">samridhi.odl@gmail.com</p>
+                              <p className="text-gray-600">nitryaisha@gmail.com</p>
                   </div>
                 </div>
 
@@ -114,8 +113,8 @@ const Contact = () => {
           <p className="text-primary-200 mb-8">
             Please note that guidance session is only for prospective 1:1 students and we do not offer a concept of trial or demo in dance.
           </p>
-          <a href="mailto:samridhi.odl@gmail.com" className="btn-primary bg-white text-primary-600 hover:bg-primary-50 text-lg px-8 py-4">
-            Email Us at samridhi.odl@gmail.com
+          <a href="mailto:nitryaisha@gmail.com" className="btn-primary bg-white text-primary-600 hover:bg-primary-50 text-lg px-8 py-4">
+            Email Us at nitryaisha@gmail.com
           </a>
         </div>
       </section>
