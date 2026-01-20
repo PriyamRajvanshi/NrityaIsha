@@ -200,7 +200,7 @@ const Home = () => {
                   )}
                 </button>
                 <div className="flex-1 text-white">
-                  <p className="text-sm font-medium">Dance School - Classical Dance Excellence</p>
+                  <p className="text-sm font-medium">NitryaIsha - Classical Dance Excellence</p>
                 </div>
               </div>
             </div>
@@ -215,14 +215,14 @@ const Home = () => {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-serif font-bold mb-8 text-center">
-              Our Mission
+              Our Vision
             </h2>
             <div className="prose prose-lg mx-auto">
               <p className="text-gray-700 leading-relaxed mb-6">
-                The foundation aims to provide cultural education of the art of dance by imparting the essence of the Guru-Sishya Parampara system through a contemporary approach. We want your journey towards self-expression to be a path of discovery and learning.
+                NrityaIsha envisions a space where Indian classical dance is lived with depth, discipline, and relevance. Our vision is to make classical dance accessible without dilution, to bridge inherited tradition with contemporary understanding, and to restore dance as a meaningful form of expression rather than mere performance.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                As an important step to enhance your experience in learning and exploring classical dance, we wanted you to be inclusive of the Global Performing Arts scenario, and get access to the global performing arts communities along with an indigenous understanding of Indian – Classical Dance.
+                Through training, mentorship, and community engagement, NrityaIsha aims to shape thoughtful practitioners who carry the art forward with integrity, awareness, and responsibility. We seek to nurture dancers who approach the art with sincerity, respect for lineage, and commitment to sustained practice.
               </p>
             </div>
           </div>

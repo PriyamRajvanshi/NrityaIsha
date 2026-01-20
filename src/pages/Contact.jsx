@@ -1,140 +1,20 @@
-import { useState } from 'react'
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    interest: '',
-  })
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // In a real application, this would send data to a backend
-    alert('Thank you for your message! We will get back to you soon.')
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-      interest: '',
-    })
-  }
 
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero Section with Contact Information */}
       <section className="bg-gradient-to-br from-primary-50 via-white to-primary-50 section-padding">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6">
-              Get In Touch
-            </h1>
-            <p className="text-xl text-gray-700 leading-relaxed">
-              Have questions? Want to book a free guidance session? We'd love to hear from you!
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form and Info */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Contact Form */}
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
+            {/* Get In Touch Content */}
             <div>
-              <h2 className="text-3xl font-serif font-bold mb-6">
-                Send us a Message
-              </h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-600 transition-colors"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-600 transition-colors"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-600 transition-colors"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-2">
-                    I'm interested in
-                  </label>
-                  <select
-                    id="interest"
-                    name="interest"
-                    value={formData.interest}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-600 transition-colors"
-                  >
-                    <option value="">Select an option</option>
-                    <option value="beginner">Beginner Classes</option>
-                    <option value="intermediate">Intermediate Classes</option>
-                    <option value="advanced">Advanced Classes</option>
-                    <option value="one-on-one">One-on-One Sessions</option>
-                    <option value="group">Group Classes</option>
-                    <option value="certification">Certification Program</option>
-                    <option value="guidance">Free Guidance Session</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows="5"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-600 transition-colors resize-none"
-                  />
-                </div>
-                <button type="submit" className="btn-primary w-full">
-                  Send Message
-                </button>
-              </form>
+              <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6">
+                Get In Touch
+              </h1>
+              <p className="text-xl text-gray-700 leading-relaxed mb-8">
+                Have questions? Want to book a free guidance session? We'd love to hear from you!
+              </p>
             </div>
 
             {/* Contact Information */}
@@ -164,11 +44,11 @@ const Contact = () => {
                   </div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">+91-7011235061</p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
+                {/* <div className="flex items-start">
                   <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -180,11 +60,11 @@ const Contact = () => {
                     <p className="text-gray-600">Online Classes Available Worldwide</p>
                     <p className="text-gray-600">Studio Location: [Your Address]</p>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Social Media */}
-              <div className="mt-8">
+              {/* <div className="mt-8">
                 <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
                   <a
@@ -215,11 +95,12 @@ const Contact = () => {
                     </svg>
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Free Guidance Session CTA */}
       <section className="section-padding bg-primary-600 text-white">

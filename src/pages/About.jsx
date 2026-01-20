@@ -5,18 +5,18 @@ const About = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-50 via-white to-primary-50 section-padding">
+      {/* <section className="bg-gradient-to-br from-primary-50 via-white to-primary-50 section-padding">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6">
-              About Our Dance School
+              About Our NitryaIsha
             </h1>
             <p className="text-xl text-gray-700 leading-relaxed">
               Founded with a vision to cultivate the importance of classical dance art forms. Our aim is to focus on teaching and promoting the performing art form among people across borders and identities for the sheer joy of celebration of cultural dance.
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Global Dance Sections */}
       <section className="section-padding bg-white">
