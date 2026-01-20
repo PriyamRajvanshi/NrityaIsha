@@ -53,7 +53,7 @@ const Header = () => {
             <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
               <span className="text-white font-serif text-xl font-bold">D</span>
             </div>
-            <span className="text-xl font-serif font-semibold">Dance School</span>
+            <span className="text-xl font-serif font-semibold">NitryaIsha</span>
           </button>
 
           {/* Desktop Navigation */}

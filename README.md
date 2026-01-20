@@ -1,4 +1,4 @@
-# Dance Portfolio & School Website
+# NitryaIsha - Classical Dance Website
 
 A modern, responsive website for a dance portfolio and school, built with React and Tailwind CSS.
 
