@@ -10,27 +10,29 @@ const Blog = () => {
       excerpt: 'Indian classical dance is not merely inherited through technique—it is transmitted through lineage, lived philosophy, and disciplined devotion...',
       category: 'History',
       date: 'January 15, 2025',
+      image: 'https://tnsbfmudt4jtfb5d.public.blob.vercel-storage.com/B1.JPG',
       content: `
-        <p>Indian classical dance is not merely inherited through technique—it is transmitted through <strong>lineage, lived philosophy, and disciplined devotion</strong>. Few legacies embody this truth as powerfully as that of the <strong>Thanjavur Quartet</strong>.</p>
+        <p>Indian classical dance is not merely inherited through technique. It is transmitted through lineage, lived philosophy, and disciplined devotion. Few legacies embody this truth as powerfully as that of the <strong>Thanjavur Quartet</strong>.</p>
 
-        <p>The Thanjavur Quartet—<strong>Chinnayya, Ponnayya, Sivanandam, and Vadivelu</strong>—were visionaries who shaped Bharatanatyam into the structured, expressive, and codified art form we recognize today. Their contributions span choreography, pedagogy, music, and performance grammar, laying the foundation for the <em>margam</em> system and elevating dance as both a spiritual and performative discipline. Every <em>adavus</em>, every <em>abhinaya nuance</em>, and every compositional choice carries echoes of their thought.</p>
+        <p>The Thanjavur Quartet, Chinnayya, Ponnayya, Sivanandam, and Vadivelu, were visionaries who shaped Bharatanatyam into the structured, expressive, and codified art form we recognise today. Their contributions span choreography, pedagogy, music, and performance grammar, laying the foundation for the margam system and elevating dance as both a spiritual and performative discipline. Every adavus, every abhinaya nuance, and every compositional choice carries echoes of their thought.</p>
 
-        <p>To learn within this lineage is not simply to acquire skill—it is to absorb <strong>responsibility</strong>.</p>
+        <p>To learn within this lineage is not simply to acquire skill. It is to absorb responsibility.</p>
 
-        <p>I have been deeply fortunate to learn from the <strong>seventh generation of this lineage</strong>, from the family of <strong>Kitappa Pillai</strong>. This experience has been humbling in ways that transcend words. Training here is not rushed; it is rooted. Precision is demanded, but so is understanding—of why a movement exists, what it conveys, and how it must be carried forward with integrity.</p>
+        <p>I have been deeply fortunate to learn from the seventh generation of this lineage, from the family of <strong>Kitappa Pillai</strong>. This experience has been humbling in ways that transcend words. Training here is not rushed. It is rooted. Precision is demanded, but so is understanding, of why a movement exists, what it conveys, and how it must be carried forward with integrity.</p>
 
-        <p>What struck me most was the quiet rigor of the pedagogy. Tradition was never presented as static, but as something living—requiring discipline, reflection, and reverence. Each correction carried centuries of refinement; each lesson reinforced that dance is not performance alone, but <strong>practice, patience, and purpose</strong>.</p>
+        <p>What struck me most was the quiet rigor of the pedagogy. Tradition was never presented as static, but as something living, requiring discipline, reflection, and reverence. Each correction carried centuries of refinement. Each lesson reinforced that dance is not performance alone, but practice, patience, and purpose.</p>
 
-        <p>This privilege has shaped not only how I dance, but how I think about art, lineage, and stewardship. To be part of such a continuum is to recognize that we are not owners of tradition—we are its temporary custodians.</p>
+        <p>This privilege has shaped not only how I dance, but how I think about art, lineage, and stewardship. To be part of such a continuum is to recognise that we are not owners of tradition. We are its temporary custodians.</p>
 
-        <p>At NrityaIsha, this ethos guides everything we do: honoring where we come from, while preparing ourselves to carry the art forward with sincerity, depth, and humility.</p>
+        <p>At NrityaIsha, this ethos guides everything we do. Honouring where we come from, while preparing ourselves to carry the art forward with sincerity, depth, and humility.</p>
       `,
     },
     {
       title: 'Bharatanatyam Banis',
       excerpt: 'Bharatanatyam as we know it today evolved from the temple tradition of Sadir or Dasi Attam. While the core grammar remains the same...',
       category: 'History',
-      date: 'January 10, 2024',
+      date: 'May 17, 2024',
+      image: 'https://tnsbfmudt4jtfb5d.public.blob.vercel-storage.com/ghungroo.jpg',
       content: `
         <p>Bharatanatyam as we know it today evolved from the temple tradition of Sadir or Dasi Attam. While the core grammar of Bharatanatyam remains the same across regions, the way it is taught, performed, and interpreted differs based on lineage. These stylistic traditions are known as <strong>banis</strong>.</p>
 
@@ -59,7 +61,8 @@ const Blog = () => {
       title: 'From Temple to Stage',
       excerpt: 'Bharatanatyam did not begin as performance. It began as offering. In its early form, known as Sadir Attam, dance lived within temple spaces...',
       category: 'History',
-      date: 'January 5, 2024',
+      date: 'December 23, 2023',
+      image: 'https://tnsbfmudt4jtfb5d.public.blob.vercel-storage.com/B3.JPG',
       content: `
         <p>Bharatanatyam did not begin as performance.</p>
 
@@ -109,11 +112,31 @@ const Blog = () => {
                 key={index}
                 className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="aspect-video bg-gradient-to-br from-primary-200 to-primary-400 flex items-center justify-center">
-                  <svg className="w-16 h-16 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
+                {post.image ? (
+                  <div className="aspect-video overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        // Fallback to placeholder if image fails to load
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="hidden aspect-video bg-gradient-to-br from-primary-200 to-primary-400 items-center justify-center">
+                      <svg className="w-16 h-16 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="aspect-video bg-gradient-to-br from-primary-200 to-primary-400 flex items-center justify-center">
+                    <svg className="w-16 h-16 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                )}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-xs font-semibold text-primary-600 bg-primary-50 px-3 py-1 rounded-full">

@@ -68,7 +68,7 @@ const Footer = () => {
             <h3 className="text-white font-serif text-lg font-semibold mb-4">Contact</h3>
             <div className="flex-1">
               <div className="space-y-2">
-                <p className="text-sm">Email: info@danceschool.com</p>
+                <p className="text-sm">Email: nitryaisha@gmail.com</p>
                 <p className="text-sm">Phone: +91-7011235061</p>
               </div>
             </div>
