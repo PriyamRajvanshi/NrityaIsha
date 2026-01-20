@@ -3,10 +3,10 @@ import { VIDEO_URL } from '../config/video'
 
 const Performances = () => {
   const topVideoRef = useRef(null)
-  const bottomVideoRef = useRef(null)
+  // const bottomVideoRef = useRef(null)
   const topProgressBarRef = useRef(null)
-  const bottomProgressBarRef = useRef(null)
-  
+  // const bottomProgressBarRef = useRef(null)
+
   const [topVideoState, setTopVideoState] = useState({
     isPlaying: false,
     isMuted: true,
@@ -14,18 +14,18 @@ const Performances = () => {
     duration: 0,
     isSeeking: false
   })
-  
-  const [bottomVideoState, setBottomVideoState] = useState({
-    isPlaying: false,
-    isMuted: true,
-    currentTime: 0,
-    duration: 0,
-    isSeeking: false
-  })
+
+  // const [bottomVideoState, setBottomVideoState] = useState({
+  //   isPlaying: false,
+  //   isMuted: true,
+  //   currentTime: 0,
+  //   duration: 0,
+  //   isSeeking: false
+  // })
 
   // Video URL from config (supports Vercel Blob or local path)
   const topVideoSrc = VIDEO_URL
-  const bottomVideoSrc = VIDEO_URL
+  // const bottomVideoSrc = VIDEO_URL
 
   // Top Video Controls
   const toggleTopPlay = () => {
@@ -69,47 +69,47 @@ const Performances = () => {
     setTopVideoState(prev => ({ ...prev, currentTime: newTime }))
   }
 
-  // Bottom Video Controls
-  const toggleBottomPlay = () => {
-    if (bottomVideoRef.current) {
-      if (bottomVideoState.isPlaying) {
-        bottomVideoRef.current.pause()
-      } else {
-        bottomVideoRef.current.play()
-      }
-      setBottomVideoState(prev => ({ ...prev, isPlaying: !prev.isPlaying }))
-    }
-  }
+  // Bottom Video Controls (commented out)
+  // const toggleBottomPlay = () => {
+  //   if (bottomVideoRef.current) {
+  //     if (bottomVideoState.isPlaying) {
+  //       bottomVideoRef.current.pause()
+  //     } else {
+  //       bottomVideoRef.current.play()
+  //     }
+  //     setBottomVideoState(prev => ({ ...prev, isPlaying: !prev.isPlaying }))
+  //   }
+  // }
 
-  const toggleBottomMute = () => {
-    if (bottomVideoRef.current) {
-      bottomVideoRef.current.muted = !bottomVideoState.isMuted
-      setBottomVideoState(prev => ({ ...prev, isMuted: !prev.isMuted }))
-    }
-  }
+  // const toggleBottomMute = () => {
+  //   if (bottomVideoRef.current) {
+  //     bottomVideoRef.current.muted = !bottomVideoState.isMuted
+  //     setBottomVideoState(prev => ({ ...prev, isMuted: !prev.isMuted }))
+  //   }
+  // }
 
-  const handleBottomTimeUpdate = () => {
-    if (bottomVideoRef.current && !bottomVideoState.isSeeking) {
-      setBottomVideoState(prev => ({ ...prev, currentTime: bottomVideoRef.current.currentTime }))
-    }
-  }
+  // const handleBottomTimeUpdate = () => {
+  //   if (bottomVideoRef.current && !bottomVideoState.isSeeking) {
+  //     setBottomVideoState(prev => ({ ...prev, currentTime: bottomVideoRef.current.currentTime }))
+  //   }
+  // }
 
-  const handleBottomLoadedMetadata = () => {
-    if (bottomVideoRef.current) {
-      setBottomVideoState(prev => ({ ...prev, duration: bottomVideoRef.current.duration }))
-    }
-  }
+  // const handleBottomLoadedMetadata = () => {
+  //   if (bottomVideoRef.current) {
+  //     setBottomVideoState(prev => ({ ...prev, duration: bottomVideoRef.current.duration }))
+  //   }
+  // }
 
-  const handleBottomSeek = (e) => {
-    if (!bottomVideoRef.current || !bottomProgressBarRef.current) return
-    const progressBar = bottomProgressBarRef.current
-    const rect = progressBar.getBoundingClientRect()
-    const clickX = e.clientX - rect.left
-    const percentage = clickX / rect.width
-    const newTime = percentage * bottomVideoState.duration
-    bottomVideoRef.current.currentTime = newTime
-    setBottomVideoState(prev => ({ ...prev, currentTime: newTime }))
-  }
+  // const handleBottomSeek = (e) => {
+  //   if (!bottomVideoRef.current || !bottomProgressBarRef.current) return
+  //   const progressBar = bottomProgressBarRef.current
+  //   const rect = progressBar.getBoundingClientRect()
+  //   const clickX = e.clientX - rect.left
+  //   const percentage = clickX / rect.width
+  //   const newTime = percentage * bottomVideoState.duration
+  //   bottomVideoRef.current.currentTime = newTime
+  //   setBottomVideoState(prev => ({ ...prev, currentTime: newTime }))
+  // }
 
   const formatTime = (seconds) => {
     if (isNaN(seconds)) return '0:00'
@@ -119,7 +119,7 @@ const Performances = () => {
   }
 
   const topProgressPercentage = topVideoState.duration > 0 ? (topVideoState.currentTime / topVideoState.duration) * 100 : 0
-  const bottomProgressPercentage = bottomVideoState.duration > 0 ? (bottomVideoState.currentTime / bottomVideoState.duration) * 100 : 0
+  // const bottomProgressPercentage = bottomVideoState.duration > 0 ? (bottomVideoState.currentTime / bottomVideoState.duration) * 100 : 0
 
   // Performance images - add your images to public/images/performances/ folder
   // 3x3 grid = 9 images total
@@ -148,18 +148,18 @@ const Performances = () => {
     }
   }, [topVideoState.isSeeking])
 
-  // Event listeners for bottom video
-  useEffect(() => {
-    const video = bottomVideoRef.current
-    if (video) {
-      video.addEventListener('timeupdate', handleBottomTimeUpdate)
-      video.addEventListener('loadedmetadata', handleBottomLoadedMetadata)
-      return () => {
-        video.removeEventListener('timeupdate', handleBottomTimeUpdate)
-        video.removeEventListener('loadedmetadata', handleBottomLoadedMetadata)
-      }
-    }
-  }, [bottomVideoState.isSeeking])
+  // Event listeners for bottom video (commented out)
+  // useEffect(() => {
+  //   const video = bottomVideoRef.current
+  //   if (video) {
+  //     video.addEventListener('timeupdate', handleBottomTimeUpdate)
+  //     video.addEventListener('loadedmetadata', handleBottomLoadedMetadata)
+  //     return () => {
+  //       video.removeEventListener('timeupdate', handleBottomTimeUpdate)
+  //       video.removeEventListener('loadedmetadata', handleBottomLoadedMetadata)
+  //     }
+  //   }
+  // }, [bottomVideoState.isSeeking])
 
   return (
     <div>
@@ -314,7 +314,7 @@ const Performances = () => {
       </section>
 
       {/* Bottom Video Section */}
-      <section className="relative bg-black">
+      {/* <section className="relative bg-black">
         <div className="relative h-[500px] md:h-[600px] lg:h-[700px]">
           <video
             ref={bottomVideoRef}
@@ -342,7 +342,6 @@ const Performances = () => {
             </div>
           </div>
 
-          {/* Bottom Video Controls */}
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
             <div className="container-custom">
               <div className="mb-3">
@@ -406,7 +405,7 @@ const Performances = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }
