@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Stats from '../components/sections/Stats'
 import Approach from '../components/sections/Approach'
 
@@ -19,29 +18,127 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* Global Dance Sections */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-serif font-bold mb-8 text-center">
-              Our Mission
-            </h2>
-            <div className="prose prose-lg mx-auto">
-              <p className="text-gray-700 leading-relaxed mb-6">
-                The foundation aims to provide cultural education of the art of dance by imparting the essence of the Guru-Sishya Parampara system through a contemporary approach. We want your journey towards self-expression to be a path of discovery and learning.
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <div>
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl">
+                <img
+                  src="/images/global1.jpg"
+                  alt="Classes are Inclusive, Catered towards your needs"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none'
+                    const placeholder = e.target.nextSibling
+                    if (placeholder) {
+                      placeholder.style.display = 'flex'
+                    }
+                  }}
+                />
+                <div className="hidden absolute inset-0 bg-gradient-to-br from-primary-200 to-primary-400 items-center justify-center">
+                  <div className="text-center p-4">
+                    <svg
+                      className="w-16 h-16 text-white mx-auto mb-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <p className="text-white text-sm">Add image: /images/global1.jpg</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Text Content */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">
+                Classes are Inclusive, Catered towards your needs
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Our goal is for you to learn classical dance regardless of your age or gender. Our Programs are structured to help you grow individually. The virtual classes are flexible by way of enabling you to book your preferred slots from our scheduling calendar.
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                As an important step to enhance your experience in learning and exploring classical dance, we wanted you to be inclusive of the Global Performing Arts scenario, and get access to the global performing arts communities along with an indigenous understanding of Indian – Classical Dance.
-              </p>
+              <button
+                onClick={() => document.getElementById('trainings').scrollIntoView({ behavior: 'smooth' })}
+                className="btn-primary inline-block"
+              >
+                Know More
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      <Stats />
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-2 gap-12 items-center md:grid-flow-dense">
+            {/* Text Content */}
+            <div className="md:col-start-1 md:row-start-1">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">
+                Lessons focused on building movement and self-awareness
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                We want your learning experience to be more than just plain instructive monologues. We help learners build movement confidence and establish the traditional significance of the form. Our approach combines body conditioning exercises, free body movements in vocabulary of classical dance, and training in choreographic nuances and performance.
+              </p>
+              <button
+                onClick={() => document.getElementById('trainings').scrollIntoView({ behavior: 'smooth' })}
+                className="btn-primary inline-block"
+              >
+                Know More
+              </button>
+            </div>
+
+            {/* Image */}
+            <div className="md:col-start-2">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl">
+                <img
+                  src="/images/global2.jpg"
+                  alt="Lessons focused on building movement and self-awareness"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none'
+                    const placeholder = e.target.nextSibling
+                    if (placeholder) {
+                      placeholder.style.display = 'flex'
+                    }
+                  }}
+                />
+                <div className="hidden absolute inset-0 bg-gradient-to-br from-primary-200 to-primary-400 items-center justify-center">
+                  <div className="text-center p-4">
+                    <svg
+                      className="w-16 h-16 text-white mx-auto mb-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <p className="text-white text-sm">Add image: /images/global2.jpg</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* <Stats /> */}
 
       {/* Logo Story */}
-      <section className="section-padding bg-gray-50">
+      {/* <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-serif font-bold mb-8 text-center">
@@ -61,12 +158,12 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <Approach />
+      {/* <Approach /> */}
 
       {/* Certifications */}
-      <section className="section-padding bg-white">
+      {/* <section className="section-padding bg-white">
         <div className="container-custom">
           <h2 className="text-4xl font-serif font-bold mb-12 text-center">
             Our Affiliations
@@ -90,10 +187,10 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="section-padding bg-primary-600 text-white">
+      {/* <section className="section-padding bg-primary-600 text-white">
         <div className="container-custom text-center">
           <h2 className="text-4xl font-serif font-bold mb-6">
             Ready to Start Your Journey?
@@ -101,11 +198,14 @@ const About = () => {
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
             Join our community and begin your path towards mastering the art of classical dance.
           </p>
-          <Link to="/trainings" className="btn-primary bg-white text-primary-600 hover:bg-primary-50 text-lg px-8 py-4">
+          <button
+            onClick={() => document.getElementById('trainings').scrollIntoView({ behavior: 'smooth' })}
+            className="btn-primary bg-white text-primary-600 hover:bg-primary-50 text-lg px-8 py-4"
+          >
             Explore Our Trainings
-          </Link>
+          </button>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

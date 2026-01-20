@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -18,29 +17,36 @@ const Footer = () => {
             <h3 className="text-white font-serif text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-sm hover:text-primary-400 transition-colors">
+                <button
+                  onClick={() => document.getElementById('home').scrollIntoView({ behavior: 'smooth' })}
+                  className="text-sm hover:text-primary-400 transition-colors"
+                >
                   Home
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/about" className="text-sm hover:text-primary-400 transition-colors">
+                <button
+                  onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
+                  className="text-sm hover:text-primary-400 transition-colors"
+                >
                   About
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/trainings" className="text-sm hover:text-primary-400 transition-colors">
-                  Trainings
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-sm hover:text-primary-400 transition-colors">
+                <button
+                  onClick={() => document.getElementById('blog').scrollIntoView({ behavior: 'smooth' })}
+                  className="text-sm hover:text-primary-400 transition-colors"
+                >
                   Blog
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/contact" className="text-sm hover:text-primary-400 transition-colors">
+                <button
+                  onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                  className="text-sm hover:text-primary-400 transition-colors"
+                >
                   Contact
-                </Link>
+                </button>
               </li>
             </ul>
           </div>

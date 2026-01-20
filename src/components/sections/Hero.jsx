@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
@@ -16,9 +15,12 @@ const Hero = () => {
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               Bringing to you centuries old art form through comprehensive learning and nurturing your artistic expression and cultural reverence. Offline and Online classes by expert instructors.
             </p>
-            <Link to="/trainings" className="btn-primary text-lg px-8 py-4">
+            <button
+              onClick={() => document.getElementById('trainings').scrollIntoView({ behavior: 'smooth' })}
+              className="btn-primary text-lg px-8 py-4"
+            >
               Know more about our Trainings
-            </Link>
+            </button>
           </div>
           <div className="relative">
             <div className="aspect-square bg-gradient-to-br from-primary-200 to-primary-400 rounded-2xl shadow-2xl flex items-center justify-center">

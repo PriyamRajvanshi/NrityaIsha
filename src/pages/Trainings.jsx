@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 
 const Trainings = () => {
   const trainingPrograms = [
@@ -106,12 +105,12 @@ const Trainings = () => {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/contact"
+                <button
+                  onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
                   className="btn-primary w-full text-center block"
                 >
                   Enroll Now
-                </Link>
+                </button>
               </div>
             ))}
           </div>
@@ -177,9 +176,12 @@ const Trainings = () => {
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
             Take a free 30-minute guidance class, get to meet your Guru and learn more about how you learn with us.
           </p>
-          <Link to="/contact" className="btn-primary bg-white text-primary-600 hover:bg-primary-50 text-lg px-8 py-4">
+          <button
+            onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+            className="btn-primary bg-white text-primary-600 hover:bg-primary-50 text-lg px-8 py-4"
+          >
             Contact Us
-          </Link>
+          </button>
         </div>
       </section>
     </div>

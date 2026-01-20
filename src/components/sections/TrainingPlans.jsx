@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 
 const TrainingPlans = () => {
   const [isNewLearner, setIsNewLearner] = useState(null)
@@ -68,9 +67,12 @@ const TrainingPlans = () => {
                   </li>
                 </ul>
               </div>
-              <Link to="/trainings" className="btn-primary inline-block">
+              <button
+                onClick={() => document.getElementById('trainings').scrollIntoView({ behavior: 'smooth' })}
+                className="btn-primary inline-block"
+              >
                 Learn More
-              </Link>
+              </button>
             </div>
           )}
         </div>

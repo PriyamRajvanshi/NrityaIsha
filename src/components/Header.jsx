@@ -1,20 +1,47 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const location = useLocation()
+  const [activeSection, setActiveSection] = useState('home')
 
-  const isActive = (path) => location.pathname === path
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+    setIsMenuOpen(false)
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'trainings', 'go-global', 'performances', 'blog', 'contact']
+      const scrollPosition = window.scrollY + 100 // Offset for header height
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i])
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i])
+          break
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Check initial position
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const isActive = (sectionId) => activeSection === sectionId
 
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/trainings', label: 'Trainings' },
-    { path: '/go-global', label: 'Go Global' },
-    { path: '/performances', label: 'Performances' },
-    { path: '/blog', label: 'Blog' },
-    { path: '/contact', label: 'Contact' },
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    // { id: 'trainings', label: 'Trainings' },
+    // { id: 'go-global', label: 'Go Global' },
+    { id: 'performances', label: 'Performances' },
+    { id: 'blog', label: 'Blog' },
+    { id: 'contact', label: 'Contact' },
   ]
 
   return (
@@ -22,27 +49,27 @@ const Header = () => {
       <nav className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <button onClick={() => scrollToSection('home')} className="flex items-center space-x-2">
             <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
               <span className="text-white font-serif text-xl font-bold">D</span>
             </div>
             <span className="text-xl font-serif font-semibold">Dance School</span>
-          </Link>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(link.path)
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className={`text-sm font-medium transition-colors cursor-pointer ${
+                  isActive(link.id)
                     ? 'text-primary-600 border-b-2 border-primary-600 pb-1'
                     : 'text-gray-700 hover:text-primary-600'
                 }`}
               >
                 {link.label}
-              </Link>
+              </button>
             ))}
           </div>
 
@@ -81,18 +108,17 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsMenuOpen(false)}
-                className={`block py-2 text-sm font-medium ${
-                  isActive(link.path)
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className={`block py-2 text-sm font-medium text-left cursor-pointer ${
+                  isActive(link.id)
                     ? 'text-primary-600'
                     : 'text-gray-700'
                 }`}
               >
                 {link.label}
-              </Link>
+              </button>
             ))}
           </div>
         )}

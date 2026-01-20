@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 
 const BlogPreview = () => {
   const blogPosts = [
@@ -30,10 +29,10 @@ const BlogPreview = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
-            <Link
+            <button
               key={index}
-              to="/blog"
-              className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+              onClick={() => document.getElementById('blog').scrollIntoView({ behavior: 'smooth' })}
+              className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 text-left"
             >
               <div className="aspect-video bg-gray-200 overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-primary-200 to-primary-400 flex items-center justify-center">
@@ -53,14 +52,17 @@ const BlogPreview = () => {
                   Read More →
                 </span>
               </div>
-            </Link>
+            </button>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <Link to="/blog" className="btn-secondary">
+          <button
+            onClick={() => document.getElementById('blog').scrollIntoView({ behavior: 'smooth' })}
+            className="btn-secondary"
+          >
             View All Blog Posts
-          </Link>
+          </button>
         </div>
       </div>
     </section>
