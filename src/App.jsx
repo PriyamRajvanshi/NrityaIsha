@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 // import Trainings from './pages/Trainings'
 // import GoGlobal from './pages/GoGlobal'
-// import Performances from './pages/Performances'
+import Performances from './pages/Performances'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 
@@ -25,9 +25,9 @@ function App() {
         {/* <section id="go-global">
           <GoGlobal />
         </section> */}
-        {/* <section id="performances">
+        <section id="performances">
           <Performances />
-        </section> */}
+        </section>
         <section id="blog">
           <Blog />
         </section>
