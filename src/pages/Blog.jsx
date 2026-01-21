@@ -90,21 +90,21 @@ const Blog = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-50 via-white to-primary-50 section-padding">
+      <section className="bg-gradient-to-br from-primary-50 via-white to-primary-50 pt-20 pb-12">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6">
-              Our Blog
+              Blog
             </h1>
-            <p className="text-xl text-gray-700 leading-relaxed">
+            {/* <p className="text-xl text-gray-700 leading-relaxed">
               Explore articles, tips, and insights about classical dance, learning techniques, and cultural significance.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
 
       {/* Blog Posts */}
-      <section className="section-padding bg-white">
+      <section className="pt-8 pb-20 bg-white">
         <div className="container-custom">
           <div className="grid md:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
@@ -163,29 +163,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      {/* <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-2xl mx-auto text-center bg-white rounded-xl p-8 shadow-lg">
-            <h2 className="text-3xl font-serif font-bold mb-4">
-              Stay Updated
-            </h2>
-            <p className="text-gray-600 mb-6">
-              Subscribe to our newsletter to get the latest articles and updates delivered to your inbox.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-600"
-              />
-              <button type="submit" className="btn-primary whitespace-nowrap">
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-      </section> */}
 
       {/* Blog Modal */}
       {selectedBlog && (
