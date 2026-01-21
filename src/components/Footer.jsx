@@ -35,14 +35,14 @@ const Footer = () => {
                     About
                   </button>
                 </li>
-                {/* <li>
+                <li>
                   <button
                     onClick={() => document.getElementById('performances').scrollIntoView({ behavior: 'smooth' })}
                     className="text-sm hover:text-primary-400 transition-colors"
                   >
                     Performances
                   </button>
-                </li> */}
+                </li>
                 <li>
                   <button
                     onClick={() => document.getElementById('blog').scrollIntoView({ behavior: 'smooth' })}

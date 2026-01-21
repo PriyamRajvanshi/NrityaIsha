@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { VIDEO_URL } from '../config/video'
+import { PERFORMANCES_VIDEO_URL } from '../config/video'
 
 const Performances = () => {
   const topVideoRef = useRef(null)
@@ -24,8 +24,8 @@ const Performances = () => {
   // })
 
   // Video URL from config (supports Vercel Blob or local path)
-  const topVideoSrc = VIDEO_URL
-  // const bottomVideoSrc = VIDEO_URL
+  const topVideoSrc = PERFORMANCES_VIDEO_URL
+  // const bottomVideoSrc = PERFORMANCES_VIDEO_URL
 
   // Top Video Controls
   const toggleTopPlay = () => {
@@ -123,6 +123,8 @@ const Performances = () => {
 
   // Performance images - add your images to public/images/performances/ folder
   // 3x3 grid = 9 images total
+  // COMMENTED OUT - Photo grid is temporarily disabled
+  /*
   const performanceImages = [
     { id: 1, src: '/images/performances/performance1.jpg', alt: 'Performance 1' },
     { id: 2, src: '/images/performances/performance2.jpg', alt: 'Performance 2' },
@@ -134,6 +136,7 @@ const Performances = () => {
     { id: 8, src: '/images/performances/performance8.jpg', alt: 'Performance 8' },
     { id: 9, src: '/images/performances/performance9.jpg', alt: 'Performance 9' },
   ]
+  */
 
   // Event listeners for top video
   useEffect(() => {
@@ -188,7 +191,7 @@ const Performances = () => {
           <div className="hidden absolute inset-0 bg-gray-800 items-center justify-center">
             <div className="text-center p-4">
               <p className="text-white text-lg mb-2">Video not found</p>
-              <p className="text-gray-400 text-sm">File: {topVideoSrc}</p>
+              <p className="text-gray-400 text-sm">File: {PERFORMANCES_VIDEO_URL}</p>
             </div>
           </div>
 
@@ -258,14 +261,15 @@ const Performances = () => {
         </div>
       </section>
 
-      {/* Image Gallery Section - Side by Side Grid */}
+      {/*
+      Image Gallery Section - Side by Side Grid - COMMENTED OUT
       <section className="section-padding bg-white">
         <div className="container-custom">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-12 text-center">
             Our Performances
           </h2>
-          
-          {/* Grid Layout - 3x3 Grid (3 rows, 3 columns) */}
+
+          Grid Layout - 3x3 Grid (3 rows, 3 columns)
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-3 gap-2 md:gap-4">
             {performanceImages.map((image) => (
@@ -303,8 +307,8 @@ const Performances = () => {
                     <p className="text-white text-sm">Add image: {image.src}</p>
                   </div>
                 </div>
-                
-                {/* Overlay on hover */}
+
+                Overlay on hover
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
               </div>
             ))}
@@ -312,6 +316,7 @@ const Performances = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* Bottom Video Section */}
       {/* <section className="relative bg-black">
