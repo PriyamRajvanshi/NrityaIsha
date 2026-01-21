@@ -19,7 +19,7 @@ const About = () => {
       </section> */}
 
       {/* Global Dance Sections */}
-      <section className="section-padding bg-white">
+      <section className="py-8 md:py-12 bg-white">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Image */}
@@ -61,7 +61,7 @@ const About = () => {
             {/* Text Content */}
             <div>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">
-                Iptisha
+                Iptisha Gupta
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Iptisha is shaped by fourteen years of uninterrupted sadhana since childhood in Indian classical dance. She mentored at Nritya Kaustubha, the school of Dr. Yamini Krishnamurti, and is rooted in the revered Thanjavur Quartet lineage. Through NrityaIsha, she has spent four years travelling across India, leading workshops that foster dialogue between classical and folk traditions. Teaching across schools, institutions, and community spaces, including work with underprivileged groups, her practice is dedicated to expanding access and reshaping how classical dance is perceived, understood, and lived.

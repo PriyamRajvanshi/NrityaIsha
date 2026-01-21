@@ -39,7 +39,7 @@ const Header = () => {
     { id: 'about', label: 'About' },
     // { id: 'trainings', label: 'Trainings' },
     // { id: 'go-global', label: 'Go Global' },
-    { id: 'performances', label: 'Performances' },
+    // { id: 'performances', label: 'Performances' },
     { id: 'blog', label: 'Blog' },
     { id: 'contact', label: 'Contact' },
   ]
